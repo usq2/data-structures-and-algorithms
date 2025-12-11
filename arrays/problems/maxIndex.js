@@ -5,6 +5,7 @@
  */
 
 function maxIndexDiff(arr) {
+  // merge sort logic
   const lmin = [],
     rmax = [],
     n = arr.length;

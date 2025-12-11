@@ -6,7 +6,7 @@
 /**
  *Solution
  * Approach 1: O(n^2) : two loops calculate sums at each step
- * Approach 2: Sum entire array
+ * Approach 2: Sum entire array (prefix sum)
  * Loop again: right sum = sum - a[i], left sum = sum
  */
 function equlibrium(a) {
@@ -16,8 +16,8 @@ function equlibrium(a) {
   for (let j = 0; j < a.length; j++) {
     //right sum
     sum -= a[j];
-    if (sum === l_sum) return j + 1;
     l_sum += a[j];
+    if (sum === l_sum) return j + 1;
   }
   return -1;
 }
@@ -25,6 +25,7 @@ function equlibrium(a) {
 function main() {
   const arr = [
     [-7, 1, 5, 2, -4, 3, 0],
+    [-5, -1, -1, -1, -1, -1],
     [-8, -9, 0, -17],
     [1, 1, 1, 1],
   ];
